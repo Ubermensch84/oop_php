@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__ . '/classes/DB.php';
+require_once __DIR__ . '/models/News.php';
 
-$db = new DB();
-$items = $db->query('SELECT * FROM news');
-var_dump($items);
+$items = News::getAll();
+
+include __DIR__ . '/views/index.php';
